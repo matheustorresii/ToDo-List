@@ -42,6 +42,22 @@ class ViewController: UIViewController {
     
     present(alert, animated: true)
   }
+  
+  @IBAction func clearTasks(_ sender: Any) {
+    let alert = UIAlertController(title: "Limpar", message: "Deletar todas as tarefas?", preferredStyle: .alert)
+    
+    let actionDelete = UIAlertAction(title: "Deletar", style: .destructive) { _ in
+      self.todoList = []
+      self.tableView.reloadData()
+      UserDefaults.standard.set(self.todoList, forKey: self.listKey)
+    }
+    
+    alert.addAction(actionDelete)
+    alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+    
+    present(alert, animated: true)
+  }
+  
 }
 
 extension ViewController: UITableViewDataSource{

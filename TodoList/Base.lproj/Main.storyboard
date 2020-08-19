@@ -40,6 +40,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="To Do" id="H7S-2d-epn">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="dnw-N7-cwB">
+                            <connections>
+                                <action selector="clearTasks:" destination="BYZ-38-t0r" id="t29-8c-lcl"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2AS-XY-aDs">
                             <connections>
                                 <action selector="addTask:" destination="BYZ-38-t0r" id="LES-gN-ZAb"/>
